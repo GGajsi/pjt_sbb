@@ -10,12 +10,13 @@ public class HelloController {
     @GetMapping("/hello")
     @ResponseBody
     public String hello() {
-        return "안녕하세요";
+        return "Hello World";
     }
-    @GetMapping("/hello")
-    @ResponseBody
+
+    @GetMapping("/hi")
+    // @ResponseBody // 주석처리 --> "hello.html"bbn
     public String abc() {
-        return "안녕하세요";
+        return "hello";
     }
 
 }
