@@ -21,7 +21,7 @@ repositories {
 dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-webmvc'
     testImplementation 'org.springframework.boot:spring-boot-starter-webmvc-test'
-    //Junit
+    // Junit
     testImplementation 'org.junit.jupiter:junit-jupiter'
     testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
 
@@ -29,10 +29,12 @@ dependencies {
     // thymeleaf
     implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
     implementation 'nz.net.ultraq.thymeleaf:thymeleaf-layout-dialect'
+    // Spring Boot Validation 추가
+    implementation 'org.springframework.boot:spring-boot-starter-validation'
 
     // Lombok 의존성 추가
     implementation 'org.projectlombok:lombok'
-    // 어노테이션 프로세서 설정 (필요한 경우)
+    // 어노테이션 프로세서 설정
     annotationProcessor 'org.projectlombok:lombok'
     // test 환경용
     testCompileOnly 'org.projectlombok:lombok'
