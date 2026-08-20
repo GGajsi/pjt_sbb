@@ -1,11 +1,6 @@
 package com.example.sbb;
 
-// 👇 아래 import 구문들이 들어있어야 에러가 사라집니다.
-import java.util.List;
-import static org.junit.jupiter.api.Assertions.assertEquals;
-
-import com.example.sbb.question.Question;
-import com.example.sbb.question.QuestionRepository;
+import com.example.sbb.question.QuestionService;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -14,14 +9,14 @@ import org.springframework.boot.test.context.SpringBootTest;
 class SbbApplicationTests {
 
     @Autowired
-    private QuestionRepository questionRepository;
+    private QuestionService questionService;
 
     @Test
-    void testJpa_02() {
-        List<Question> all = this.questionRepository.findAll();
-        assertEquals(16, all.size());
-
-        Question q = all.get(0);
-        assertEquals("sbb가 무엇인가요?", q.getSubject());
+    void testJpa() {
+        for (int i = 1; i <= 300; i++) {
+            String subject = String.format("테스트 데이터입니다:[%03d]", i);
+            String content = "내용 없음";
+            this.questionService.create(subject, content);
+        }
     }
 }
