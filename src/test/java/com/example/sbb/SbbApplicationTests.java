@@ -18,5 +18,6 @@ class SbbApplicationTests {
             String content = "내용 없음";
             this.questionService.create(subject, content);
         }
+
     }
 }
